@@ -40,6 +40,9 @@ function handleNum(num) {
   if (currentNum.length > 12) {
     return;
   }
+  if (num === "." && currentNum.includes(".")) {
+    return;
+  }
 
   currentNum += num;
   updateDisplay();

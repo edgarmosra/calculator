@@ -32,7 +32,6 @@ button {
 .title {
   font-family: "Press Start 2P", cursive;
   margin-bottom: 50px;
-  top-border: solid 5px black;
   border-top: solid 5px;
   border-bottom: solid 5px;
   padding: 10px;
