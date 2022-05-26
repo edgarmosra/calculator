@@ -26,6 +26,16 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  font-family: "Press Start 2P", cursive;
+  margin-bottom: 50px;
+  top-border: solid 5px black;
+  border-top: solid 5px;
+  border-bottom: solid 5px;
+  padding: 10px;
 }
 
 .calculator {
@@ -36,7 +46,7 @@ button {
   font-family: "Press Start 2P", cursive;
   border: solid 5px black;
   padding: 30px;
-  /* overflow: hidden; */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .calc-screen {
@@ -48,14 +58,14 @@ button {
   padding: 5px;
   background-color: black;
   color: white;
-  /* margin-bottom: 20px; */
 }
 
 .calc-opt-btns {
   display: flex;
   align-items: stretch;
   height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: 5px;
   gap: 5px;
 }
 
@@ -72,7 +82,11 @@ button {
 .clear-btn:hover,
 .calc-period-btn:hover,
 .calc-equals-btn:hover {
-  background-color: rgb(237, 237, 237);
+  background-color: rgb(235, 235, 235);
+}
+
+.calc-operator-btn:hover {
+  background-color: rgb(200, 200, 200);
 }
 
 .calc-num-btn:active,
@@ -81,6 +95,13 @@ button {
 .calc-period-btn:active {
   background-color: black;
   color: white;
+}
+
+.calc-num-btn:active,
+.calc-period-btn:active,
+.calc-equals-btn:active,
+.calc-operator-btn:active {
+  font-size: 25px;
 }
 
 .calc-num-btn {
@@ -93,7 +114,7 @@ button {
 .calc-equals-btn,
 .delete-btn,
 .clear-btn {
-  border: solid 2.5px lightgray;
+  border: solid 3px black;
   cursor: pointer;
 }
 
