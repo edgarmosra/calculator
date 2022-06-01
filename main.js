@@ -49,6 +49,9 @@ function handleNum(num) {
 }
 
 function handleOperator(operator) {
+  if (!currentNum) {
+    return;
+  }
   if (prevNum) {
     handleEquals();
   }
@@ -75,7 +78,12 @@ function handleEquals() {
     total = num1 + num2;
   }
 
-  currentNum = total;
+  if (total % 1 != 0) {
+    currentNum = total.toFixed(1);
+  } else {
+    currentNum = total;
+  }
+
   currentOperator = "";
   prevNum = "";
   updateDisplay();
