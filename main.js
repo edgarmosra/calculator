@@ -7,9 +7,12 @@ let operatorBtns = document.querySelectorAll(".calc-operator-btn");
 let equalsBtn = document.querySelector(".calc-equals-btn");
 let clearBtn = document.querySelector(".clear-btn");
 let deleteBtn = document.querySelector(".delete-btn");
+let cursor = document.getElementById("cursor");
 let currentOperator = "";
 let prevNum = "";
 let currentNum = "";
+
+const colors = ["red", "green", "yellow", "orange", "teal", "lime"];
 
 //event listeners
 
@@ -31,6 +34,13 @@ deleteBtn.addEventListener("click", handleDelete);
 
 // functions
 
+function handleColorChange() {
+  cursor.style.setProperty(
+    "--color",
+    colors[Math.floor(Math.random() * colors.length)]
+  );
+}
+
 function updateDisplay() {
   currentDisplayNum.textContent = currentNum;
   prevDisplayNum.textContent = `${prevNum} ${currentOperator}`;
@@ -45,6 +55,7 @@ function handleNum(num) {
   }
 
   currentNum += num;
+  handleColorChange();
   updateDisplay();
 }
 
@@ -60,6 +71,7 @@ function handleOperator(operator) {
   prevNum = currentNum;
   currentNum = "";
 
+  handleColorChange();
   updateDisplay();
 }
 
@@ -86,6 +98,7 @@ function handleEquals() {
 
   currentOperator = "";
   prevNum = "";
+  handleColorChange();
   updateDisplay();
 }
 
@@ -93,10 +106,12 @@ function handleClear() {
   currentOperator = "";
   currentNum = "";
   prevNum = "";
+  handleColorChange();
   updateDisplay();
 }
 
 function handleDelete() {
   currentNum = currentNum.slice(0, -1);
+  handleColorChange();
   updateDisplay();
 }

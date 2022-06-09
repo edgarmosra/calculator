@@ -1,3 +1,7 @@
+:root {
+  --color: yellow;
+}
+
 @font-face {
   font-family: "idle-gaming";
   src: url(fonts/idle-gaming.ttf);
@@ -5,16 +9,10 @@
 }
 
 @keyframes cursor-blink {
-  0% {
+  100% {
     opacity: 0;
   }
 }
-
-/* @keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-} */
 
 * {
   background-color: #1e293b;
@@ -25,11 +23,9 @@
 
 .container {
   height: 100vh;
-  /* background-color: #1e293b; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 15fr 1fr;
-  /* border: solid white; */
 }
 
 .inner-container {
@@ -45,7 +41,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
   color: rgb(229, 229, 229);
+}
+
+.header {
+  font-size: 2rem;
+}
+
+.footer {
+  font-size: 0.7rem;
 }
 
 /* inner container styling */
@@ -116,18 +121,14 @@
   color: white;
 }
 
-.cursor::after {
+#cursor::after {
   content: "";
   width: 10px;
-  height: 18px;
-  background: #ec7fff;
+  height: 1rem;
+  background: var(--color);
   display: inline-block;
-  animation: cursor-blink 0.9s steps(2) infinite;
+  animation: cursor-blink 1s steps(2) infinite;
 }
-
-/* .cursor {
-  animation: blinker 1s linear infinite;
-} */
 
 .cursor-box {
   display: flex;
