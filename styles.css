@@ -4,6 +4,18 @@
   font-style: normal;
 }
 
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
+/* @keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+} */
+
 * {
   background-color: #1e293b;
   font-family: "idle-gaming";
@@ -99,7 +111,24 @@
   color: #212833;
 }
 
-button:active {
+.all-btns > button:active {
   background-color: black;
   color: white;
+}
+
+.cursor::after {
+  content: "";
+  width: 10px;
+  height: 18px;
+  background: #ec7fff;
+  display: inline-block;
+  animation: cursor-blink 0.9s steps(2) infinite;
+}
+
+/* .cursor {
+  animation: blinker 1s linear infinite;
+} */
+
+.cursor-box {
+  display: flex;
 }
