@@ -53,6 +53,9 @@ function handleNum(num) {
   if (num === "." && currentNum.includes(".")) {
     return;
   }
+  if (currentNum && !currentOperator) {
+    return;
+  }
 
   currentNum += num;
   handleColorChange();
@@ -100,6 +103,10 @@ function handleEquals() {
   prevNum = "";
   handleColorChange();
   updateDisplay();
+
+  console.log("current operator:", currentOperator);
+  console.log("current num:", currentNum);
+  console.log("prev num:", prevNum);
 }
 
 function handleClear() {
