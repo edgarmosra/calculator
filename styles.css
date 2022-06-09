@@ -1,155 +1,105 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@font-face {
+  font-family: "idle-gaming";
+  src: url(fonts/idle-gaming.ttf);
+  font-style: normal;
+}
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  background-color: #1e293b;
+  font-family: "idle-gaming";
 }
 
-body,
-html,
-.main {
-  background-color: whitesmoke;
-  height: 100%;
+/* container styling */
+
+.container {
+  height: 100vh;
+  /* background-color: #1e293b; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 15fr 1fr;
+  /* border: solid white; */
 }
 
-button {
-  background: none;
-  color: inherit;
-  padding: 0;
-  font: inherit;
-  outline: inherit;
-  font-family: "Press Start 2P", cursive;
+.inner-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.main {
+/* header / footer styling */
+
+.header,
+.footer {
+  grid-column: 1 / 3;
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
+  color: rgb(229, 229, 229);
 }
 
-.title {
-  font-family: "Press Start 2P", cursive;
-  margin-bottom: 50px;
-  border-top: solid 5px;
-  border-bottom: solid 5px;
-  padding: 10px;
+/* inner container styling */
+
+.right-side,
+.left-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* calculator styling */
 
 .calculator {
+  border: 4px solid #212833;
+  height: 400px;
+  width: 300px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  height: 500px;
-  width: 400px;
-  font-family: "Press Start 2P", cursive;
-  border: solid 5px black;
-  padding: 30px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: rgb(229, 229, 229);
 }
 
 .calc-screen {
-  display: flex;
-  flex-direction: column;
-  align-self: stretch;
-  text-align: right;
   height: 75px;
   padding: 5px;
-  background-color: black;
+  background-color: #212833;
   color: white;
-}
-
-.calc-opt-btns {
-  display: flex;
-  align-items: stretch;
-  height: 50px;
-  margin-bottom: 30px;
-  margin-top: 5px;
-  gap: 5px;
-}
-
-.calc-num-btns {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  flex: 1;
-  gap: 5px;
-}
-
-.calc-num-btn:hover,
-.delete-btn:hover,
-.clear-btn:hover,
-.calc-period-btn:hover,
-.calc-equals-btn:hover {
-  background-color: rgb(235, 235, 235);
-}
-
-.calc-operator-btn:hover {
-  background-color: rgb(200, 200, 200);
-}
-
-.calc-num-btn:active,
-.clear-btn:active,
-.delete-btn:active,
-.calc-period-btn:active {
-  background-color: black;
-  color: white;
-}
-
-.calc-num-btn:active,
-.calc-period-btn:active,
-.calc-equals-btn:active,
-.calc-operator-btn:active {
-  font-size: 25px;
-}
-
-.calc-num-btn {
-  background-color: whitesmoke;
-}
-
-.calc-num-btn,
-.calc-operator-btn,
-.calc-period-btn,
-.calc-equals-btn,
-.delete-btn,
-.clear-btn {
-  border: solid 3px black;
-  cursor: pointer;
-}
-
-.delete-btn,
-.clear-btn {
-  margin-top: 5px;
-}
-
-.prev-equation {
-  font-size: 10px;
-}
-
-.current-value {
-  font-size: 23px;
-}
-
-.clear-btn,
-.delete-btn,
-.prev-equation,
-.current-value {
-  flex: 1;
-}
-
-.prev-equation,
-.current-value {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-.calc-operator-btn {
-  background: lightgray;
+.current-value,
+.prev-equation {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #212833;
 }
 
-.calc-operator-btn:active,
-.calc-equals-btn:active {
+.clear-btn {
+  grid-column: 1 / 3;
+}
+
+.delete-btn {
+  grid-column: 3 / 5;
+}
+
+.all-btns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  height: 300px;
+  gap: 10px;
+  margin-top: 10px;
+  background-color: rgb(229, 229, 229);
+  font-size: 1rem;
+}
+
+.all-btns > button {
+  border: 4px solid #212833;
+  color: #212833;
+}
+
+button:active {
   background-color: black;
-  color: yellow;
+  color: white;
 }
